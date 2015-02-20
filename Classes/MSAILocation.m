@@ -4,9 +4,9 @@
 
 /// Initializes a new instance of the class.
 - (instancetype)init {
-    if (self = [super init]) {
-    }
-    return self;
+  if(self = [super init]) {
+  }
+  return self;
 }
 
 ///
@@ -14,11 +14,11 @@
 /// @param dictionary to which the members of this class will be added.
 ///
 - (MSAIOrderedDictionary *)serializeToDictionary {
-    MSAIOrderedDictionary *dict = [super serializeToDictionary];
-    if (self.ip != nil) {
-        [dict setObject:self.ip forKey:@"ai.location.ip"];
-    }
-    return dict;
+  MSAIOrderedDictionary *dict = [super serializeToDictionary];
+  if(self.ip != nil) {
+    [dict setObject:self.ip forKey:@"ai.location.ip"];
+  }
+  return dict;
 }
 
 #pragma mark - NSCoding
@@ -28,13 +28,11 @@
   if(self) {
     self.ip = [coder decodeObjectForKey:@"self.ip"];
   }
-
   return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder {
   [coder encodeObject:self.ip forKey:@"self.ip"];
 }
-
 
 @end

@@ -4,9 +4,9 @@
 
 /// Initializes a new instance of the class.
 - (instancetype)init {
-    if (self = [super init]) {
-    }
-    return self;
+  if(self = [super init]) {
+  }
+  return self;
 }
 
 ///
@@ -14,11 +14,11 @@
 /// @param dictionary to which the members of this class will be added.
 ///
 - (MSAIOrderedDictionary *)serializeToDictionary {
-    MSAIOrderedDictionary *dict = [super serializeToDictionary];
-    if (self.baseType != nil) {
-        [dict setObject:self.baseType forKey:@"baseType"];
-    }
-    return dict;
+  MSAIOrderedDictionary *dict = [super serializeToDictionary];
+  if(self.baseType != nil) {
+    [dict setObject:self.baseType forKey:@"baseType"];
+  }
+  return dict;
 }
 
 #pragma mark - NSCoding
@@ -28,7 +28,6 @@
   if(self) {
     self.baseType = [coder decodeObjectForKey:@"self.baseType"];
   }
-
   return self;
 }
 

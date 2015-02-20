@@ -1,5 +1,4 @@
 #import "MSAIEnvelope.h"
-
 /// Data contract class for type Envelope.
 @implementation MSAIEnvelope
 
@@ -58,9 +57,13 @@
   if(self.userId != nil) {
     [dict setObject:self.userId forKey:@"userId"];
   }
-  [dict setObject:self.tags forKey:@"tags"];
-  if([NSJSONSerialization isValidJSONObject:[self.data serializeToDictionary]]) {
-    [dict setObject:[self.data serializeToDictionary] forKey:@"data"];
+  if(self.tags != nil) {
+    [dict setObject:self.tags forKey:@"tags"];
+  }
+  if(self.data != nil) {
+    if([NSJSONSerialization isValidJSONObject:[self.data serializeToDictionary]]) {
+      [dict setObject:[self.data serializeToDictionary] forKey:@"data"];
+    }
   }
   return dict;
 }
@@ -86,7 +89,6 @@
     self.tags = [coder decodeObjectForKey:@"self.tags"];
     self.data = [coder decodeObjectForKey:@"self.data"];
   }
-
   return self;
 }
 
@@ -107,6 +109,5 @@
   [coder encodeObject:self.tags forKey:@"self.tags"];
   [coder encodeObject:self.data forKey:@"self.data"];
 }
-
 
 @end

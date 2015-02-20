@@ -4,6 +4,10 @@
 
 @interface MSAILocation : MSAIObject <NSCoding>
 
-@property (nonatomic, strong) NSString *ip;
+@property (nonatomic, copy) NSString *ip;
+
+- (id)initWithCoder:(NSCoder *)coder;
+
+- (void)encodeWithCoder:(NSCoder *)coder;
 
 @end

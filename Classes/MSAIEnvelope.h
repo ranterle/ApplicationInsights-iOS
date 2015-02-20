@@ -8,10 +8,10 @@
 @property (nonatomic, copy) NSNumber *version;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *time;
-@property (nonatomic, strong) NSNumber *sampleRate;
+@property (nonatomic, copy) NSNumber *sampleRate;
 @property (nonatomic, copy) NSString *seq;
 @property (nonatomic, copy) NSString *iKey;
-@property (nonatomic, strong) NSNumber *flags;
+@property (nonatomic, copy) NSNumber *flags;
 @property (nonatomic, copy) NSString *deviceId;
 @property (nonatomic, copy) NSString *os;
 @property (nonatomic, copy) NSString *osVer;
@@ -21,5 +21,8 @@
 @property (nonatomic, strong) MSAIOrderedDictionary *tags;
 @property (nonatomic, strong) MSAIBase *data;
 
+- (id)initWithCoder:(NSCoder *)coder;
+
+- (void)encodeWithCoder:(NSCoder *)coder;
 
 @end

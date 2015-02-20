@@ -2,3 +2,8 @@
 #import "MSAISeverityLevel.h"
 #import "MSAIDataPointType.h"
 #import "MSAIDependencySourceType.h"
+#import "MSAIDependencyKind.h"
+#import "MSAISeverityLevel.h"
+#import "MSAIDataPointType.h"
+#import "MSAIDependencySourceType.h"
+#import "MSAISessionState.h"

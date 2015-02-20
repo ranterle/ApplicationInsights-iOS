@@ -7,15 +7,10 @@
 
 @interface MSAICrashData : MSAIDomain <NSCoding>
 
-@property (nonatomic, strong, readonly)NSString *envelopeTypeName;
-@property (nonatomic, strong, readonly)NSString *dataTypeName;
+@property (nonatomic, copy, readonly)NSString *envelopeTypeName;
+@property (nonatomic, copy, readonly)NSString *dataTypeName;
 @property (nonatomic, strong) MSAICrashDataHeaders *headers;
-@property (nonatomic, strong) NSMutableArray *threads;
-@property (nonatomic, strong) NSMutableArray *binaries;
-
-- (id)initWithCoder:(NSCoder *)coder;
-
-- (void)encodeWithCoder:(NSCoder *)coder;
-
+@property (nonatomic, copy) NSMutableArray *threads;
+@property (nonatomic, copy) NSMutableArray *binaries;
 
 @end

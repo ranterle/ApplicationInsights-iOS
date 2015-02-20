@@ -4,9 +4,9 @@
 
 /// Initializes a new instance of the class.
 - (instancetype)init {
-    if (self = [super init]) {
-    }
-    return self;
+  if(self = [super init]) {
+  }
+  return self;
 }
 
 ///
@@ -14,50 +14,50 @@
 /// @param dictionary to which the members of this class will be added.
 ///
 - (MSAIOrderedDictionary *)serializeToDictionary {
-    MSAIOrderedDictionary *dict = [super serializeToDictionary];
-    if (self.deviceId != nil) {
-        [dict setObject:self.deviceId forKey:@"ai.device.id"];
-    }
-    if (self.ip != nil) {
-        [dict setObject:self.ip forKey:@"ai.device.ip"];
-    }
-    if (self.language != nil) {
-        [dict setObject:self.language forKey:@"ai.device.language"];
-    }
-    if (self.locale != nil) {
-        [dict setObject:self.locale forKey:@"ai.device.locale"];
-    }
-    if (self.model != nil) {
-        [dict setObject:self.model forKey:@"ai.device.model"];
-    }
-    if (self.network != nil) {
-        [dict setObject:self.network forKey:@"ai.device.network"];
-    }
-    if (self.oemName != nil) {
-        [dict setObject:self.oemName forKey:@"ai.device.oemName"];
-    }
-    if (self.os != nil) {
-        [dict setObject:self.os forKey:@"ai.device.os"];
-    }
-    if (self.osVersion != nil) {
-        [dict setObject:self.osVersion forKey:@"ai.device.osVersion"];
-    }
-    if (self.roleInstance != nil) {
-        [dict setObject:self.roleInstance forKey:@"ai.device.roleInstance"];
-    }
-    if (self.roleName != nil) {
-        [dict setObject:self.roleName forKey:@"ai.device.roleName"];
-    }
-    if (self.screenResolution != nil) {
-        [dict setObject:self.screenResolution forKey:@"ai.device.screenResolution"];
-    }
-    if (self.type != nil) {
-        [dict setObject:self.type forKey:@"ai.device.type"];
-    }
-    if (self.vmName != nil) {
-        [dict setObject:self.vmName forKey:@"ai.device.vmName"];
-    }
-    return dict;
+  MSAIOrderedDictionary *dict = [super serializeToDictionary];
+  if(self.deviceId != nil) {
+    [dict setObject:self.deviceId forKey:@"ai.device.id"];
+  }
+  if(self.ip != nil) {
+    [dict setObject:self.ip forKey:@"ai.device.ip"];
+  }
+  if(self.language != nil) {
+    [dict setObject:self.language forKey:@"ai.device.language"];
+  }
+  if(self.locale != nil) {
+    [dict setObject:self.locale forKey:@"ai.device.locale"];
+  }
+  if(self.model != nil) {
+    [dict setObject:self.model forKey:@"ai.device.model"];
+  }
+  if(self.network != nil) {
+    [dict setObject:self.network forKey:@"ai.device.network"];
+  }
+  if(self.oemName != nil) {
+    [dict setObject:self.oemName forKey:@"ai.device.oemName"];
+  }
+  if(self.os != nil) {
+    [dict setObject:self.os forKey:@"ai.device.os"];
+  }
+  if(self.osVersion != nil) {
+    [dict setObject:self.osVersion forKey:@"ai.device.osVersion"];
+  }
+  if(self.roleInstance != nil) {
+    [dict setObject:self.roleInstance forKey:@"ai.device.roleInstance"];
+  }
+  if(self.roleName != nil) {
+    [dict setObject:self.roleName forKey:@"ai.device.roleName"];
+  }
+  if(self.screenResolution != nil) {
+    [dict setObject:self.screenResolution forKey:@"ai.device.screenResolution"];
+  }
+  if(self.type != nil) {
+    [dict setObject:self.type forKey:@"ai.device.type"];
+  }
+  if(self.machineName != nil) {
+    [dict setObject:self.machineName forKey:@"ai.device.machineName"];
+  }
+  return dict;
 }
 
 #pragma mark - NSCoding
@@ -78,9 +78,8 @@
     self.roleName = [coder decodeObjectForKey:@"self.roleName"];
     self.screenResolution = [coder decodeObjectForKey:@"self.screenResolution"];
     self.type = [coder decodeObjectForKey:@"self.type"];
-    self.vmName = [coder decodeObjectForKey:@"self.vmName"];
+    self.machineName = [coder decodeObjectForKey:@"self.machineName"];
   }
-
   return self;
 }
 
@@ -98,8 +97,7 @@
   [coder encodeObject:self.roleName forKey:@"self.roleName"];
   [coder encodeObject:self.screenResolution forKey:@"self.screenResolution"];
   [coder encodeObject:self.type forKey:@"self.type"];
-  [coder encodeObject:self.vmName forKey:@"self.vmName"];
+  [coder encodeObject:self.machineName forKey:@"self.machineName"];
 }
-
 
 @end

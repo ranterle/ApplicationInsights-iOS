@@ -11,5 +11,4 @@
 
 - (void)encodeWithCoder:(NSCoder *)coder;
 
-
 @end

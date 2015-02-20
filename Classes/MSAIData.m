@@ -4,9 +4,9 @@
 
 /// Initializes a new instance of the class.
 - (instancetype)init {
-    if (self = [super init]) {
-    }
-    return self;
+  if(self = [super init]) {
+  }
+  return self;
 }
 
 ///
@@ -14,11 +14,13 @@
 /// @param dictionary to which the members of this class will be added.
 ///
 - (MSAIOrderedDictionary *)serializeToDictionary {
-    MSAIOrderedDictionary *dict = [super serializeToDictionary];
-    if ([NSJSONSerialization isValidJSONObject:[self.baseData serializeToDictionary]]) {
-        [dict setObject:[self.baseData serializeToDictionary] forKey:@"baseData"];
+  MSAIOrderedDictionary *dict = [super serializeToDictionary];
+  if(self.baseData != nil) {
+    if([NSJSONSerialization isValidJSONObject:[self.baseData serializeToDictionary]]) {
+      [dict setObject:[self.baseData serializeToDictionary] forKey:@"baseData"];
     }
-    return dict;
+  }
+  return dict;
 }
 
 #pragma mark - NSCoding
@@ -28,7 +30,6 @@
   if(self) {
     self.baseData = [coder decodeObjectForKey:@"self.baseData"];
   }
-
   return self;
 }
 
@@ -36,6 +37,5 @@
   [super encodeWithCoder:coder];
   [coder encodeObject:self.baseData forKey:@"self.baseData"];
 }
-
 
 @end

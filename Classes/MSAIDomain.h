@@ -4,4 +4,5 @@
 
 @interface MSAIDomain : MSAITelemetryData <NSCoding>
 
+
 @end

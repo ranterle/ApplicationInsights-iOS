@@ -1,13 +1,12 @@
-#import "MSAISeverityLevel.h"
+#import "MSAISessionState.h"
 #import "MSAIObject.h"
 #import "MSAITelemetryData.h"
 #import "MSAIDomain.h"
 
-@interface MSAIMessageData : MSAIDomain <NSCoding>
+@interface MSAISessionStateData : MSAIDomain <NSCoding>
 
 @property (nonatomic, copy, readonly)NSString *envelopeTypeName;
 @property (nonatomic, copy, readonly)NSString *dataTypeName;
-@property (nonatomic, copy) NSString *message;
-@property (nonatomic, assign) MSAISeverityLevel severityLevel;
+@property (nonatomic, assign) MSAISessionState state;
 
 @end

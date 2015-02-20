@@ -4,11 +4,10 @@
 
 @interface MSAIBase : MSAITelemetryData <NSCoding>
 
-@property (nonatomic, strong) NSString *baseType;
+@property (nonatomic, copy) NSString *baseType;
 
 - (id)initWithCoder:(NSCoder *)coder;
 
 - (void)encodeWithCoder:(NSCoder *)coder;
-
 
 @end
