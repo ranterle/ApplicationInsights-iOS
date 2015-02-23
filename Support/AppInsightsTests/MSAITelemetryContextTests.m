@@ -63,7 +63,7 @@
                                  @"ai.device.roleName":@"roleName",
                                  @"ai.device.screenResolution":@"screenResolution",
                                  @"ai.device.type":@"type",
-                                 @"ai.device.vmName":@"vmName",
+                                 @"ai.device.machineName":@"vmName",
                                  @"ai.internal.sdkVersion":@"sdkVersion",
                                  @"ai.internal.agentVersion":@"agentVersion",
                                  @"ai.application.ver":@"version",
@@ -147,7 +147,7 @@
   deviceContext.roleName = @"roleName";
   deviceContext.screenResolution = @"screenResolution";
   deviceContext.type = @"type";
-  deviceContext.vmName = @"vmName";
+  deviceContext.machineName = @"vmName";
 
   MSAIInternal *internalContext = [MSAIInternal new];
   internalContext.sdkVersion = @"sdkVersion";

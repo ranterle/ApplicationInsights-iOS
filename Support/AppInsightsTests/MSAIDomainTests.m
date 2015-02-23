@@ -8,10 +8,10 @@
 @implementation MSAIDomainTests
 
 - (void)testSerialize {
-    MSAIDomain *item = [MSAIDomain new];
-    NSString *actual = [item serializeToString];
-    NSString *expected = @"{}";
-    XCTAssertTrue([actual isEqualToString:expected]);
+  MSAIDomain *item = [MSAIDomain new];
+  NSString *actual = [item serializeToString];
+  NSString *expected = @"{}";
+  XCTAssertTrue([actual isEqualToString:expected]);
 }
 
 @end
