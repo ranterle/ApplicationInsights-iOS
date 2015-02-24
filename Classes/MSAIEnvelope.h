@@ -18,7 +18,7 @@
 @property (nonatomic, copy) NSString *appId;
 @property (nonatomic, copy) NSString *appVer;
 @property (nonatomic, copy) NSString *userId;
-@property (nonatomic, strong) MSAIOrderedDictionary *tags;
+@property (nonatomic, strong) NSDictionary *tags;
 @property (nonatomic, strong) MSAIBase *data;
 
 - (id)initWithCoder:(NSCoder *)coder;

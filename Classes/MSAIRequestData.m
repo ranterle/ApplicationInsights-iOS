@@ -10,8 +10,8 @@
     _envelopeTypeName = @"Microsoft.ApplicationInsights.Request";
     _dataTypeName = @"RequestData";
     self.version = @2;
-    self.properties = [MSAIOrderedDictionary new];
-    self.measurements = [MSAIOrderedDictionary new];
+    self.properties = [NSDictionary new];
+    self.measurements = [NSDictionary new];
   }
   return self;
 }

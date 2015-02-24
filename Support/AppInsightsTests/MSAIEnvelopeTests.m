@@ -178,7 +178,7 @@
 
 - (void)testTagsPropertyWorksAsExpected {
   MSAIEnvelope *item = [MSAIEnvelope new];
-  MSAIOrderedDictionary *actual = (MSAIOrderedDictionary *)item.tags;
+  NSDictionary *actual = (NSDictionary *)item.tags;
   XCTAssertNotNil(actual, @"Pass");
 }
 

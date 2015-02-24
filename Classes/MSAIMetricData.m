@@ -11,7 +11,7 @@
     _dataTypeName = @"MetricData";
     self.version = @2;
     self.metrics = [NSMutableArray new];
-    self.properties = [MSAIOrderedDictionary new];
+    self.properties = [NSDictionary new];
   }
   return self;
 }

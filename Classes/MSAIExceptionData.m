@@ -11,8 +11,8 @@
     _dataTypeName = @"ExceptionData";
     self.version = @2;
     self.exceptions = [NSMutableArray new];
-    self.properties = [MSAIOrderedDictionary new];
-    self.measurements = [MSAIOrderedDictionary new];
+    self.properties = [NSDictionary new];
+    self.measurements = [NSDictionary new];
   }
   return self;
 }

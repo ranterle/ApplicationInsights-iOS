@@ -10,7 +10,7 @@
     _envelopeTypeName = @"Microsoft.ApplicationInsights.Message";
     _dataTypeName = @"MessageData";
     self.version = @2;
-    self.properties = [MSAIOrderedDictionary new];
+    self.properties = [NSDictionary new];
   }
   return self;
 }

@@ -13,6 +13,6 @@
 @property (nonatomic, assign) MSAISeverityLevel severityLevel;
 @property (nonatomic, copy) NSString *problemId;
 @property (nonatomic, copy) NSNumber *crashThreadId;
-@property (nonatomic, strong) MSAIOrderedDictionary *measurements;
+@property (nonatomic, strong) NSDictionary *measurements;
 
 @end

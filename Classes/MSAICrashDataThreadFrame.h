@@ -6,7 +6,7 @@
 
 @property (nonatomic, copy) NSString *address;
 @property (nonatomic, copy) NSString *symbol;
-@property (nonatomic, strong) MSAIOrderedDictionary *registers;
+@property (nonatomic, strong) NSDictionary *registers;
 
 - (id)initWithCoder:(NSCoder *)coder;
 

@@ -35,7 +35,7 @@
 
 - (void)testRegistersPropertyWorksAsExpected {
   MSAICrashDataThreadFrame *item = [MSAICrashDataThreadFrame new];
-  MSAIOrderedDictionary *actual = (MSAIOrderedDictionary *)item.registers;
+  NSDictionary *actual = (NSDictionary *)item.registers;
   XCTAssertNotNil(actual, @"Pass");
 }
 

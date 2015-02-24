@@ -13,6 +13,6 @@
 @property (nonatomic, assign) BOOL success;
 @property (nonatomic, copy) NSString *httpMethod;
 @property (nonatomic, copy) NSString *url;
-@property (nonatomic, strong) MSAIOrderedDictionary *measurements;
+@property (nonatomic, strong) NSDictionary *measurements;
 
 @end

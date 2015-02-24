@@ -5,7 +5,7 @@
 /// Initializes a new instance of the class.
 - (instancetype)init {
   if(self = [super init]) {
-    self.registers = [MSAIOrderedDictionary new];
+    self.registers = [NSDictionary new];
   }
   return self;
 }

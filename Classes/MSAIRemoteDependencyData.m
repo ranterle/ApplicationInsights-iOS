@@ -14,7 +14,7 @@
     self.dependencyKind = MSAIDependencyKind_other;
     self.success = @true;
     self.dependencySource = MSAIDependencySourceType_undefined;
-    self.properties = [MSAIOrderedDictionary new];
+    self.properties = [NSDictionary new];
   }
   return self;
 }

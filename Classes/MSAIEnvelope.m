@@ -7,7 +7,7 @@
   if(self = [super init]) {
     self.version = @1;
     self.sampleRate = @100.0;
-    self.tags = [MSAIOrderedDictionary new];
+    self.tags = [NSDictionary new];
   }
   return self;
 }
