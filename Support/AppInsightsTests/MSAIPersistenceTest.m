@@ -6,6 +6,7 @@
 #define MOCKITO_SHORTHAND
 #import <OCMockitoIOS/OCMockitoIOS.h>
 
+#import "AppInsights.h"
 #import "MSAIEnvelope.h"
 #import "MSAIPersistence.h"
 
@@ -17,12 +18,13 @@ typedef void (^MSAIPersistenceTestBlock)(BOOL);
 
 @implementation MSAIPersistenceTest {
   
-
+  
 }
 
 - (void)setUp {
-    [super setUp];
-  
+  [super setUp];
+  [MSAIAppInsights setup];
+  [MSAIAppInsights start];
 }
 
 - (void)tearDown {
@@ -72,7 +74,7 @@ typedef void (^MSAIPersistenceTestBlock)(BOOL);
   [MSAIPersistence persistBundle:@[env] ofType:MSAIPersistenceTypeRegular withCompletionBlock:^(BOOL success){
     XCTAssertTrue(success);
   }];
-
+  
   [MSAIPersistence nextBundle];
   XCTAssertNil([MSAIPersistence nextBundle]);
 }

@@ -3,6 +3,9 @@
 #import "MSAISenderPrivate.h"
 #import "MSAIPersistence.h"
 #import "MSAIEnvelope.h"
+#import "AppInsights.h"
+#import "AppInsightsPrivate.h"
+#import "MSAIAppInsights.h"
 
 @interface MSAISender ()
 
@@ -70,12 +73,12 @@
     NSError *error = nil;
     NSData *json = [NSJSONSerialization dataWithJSONObject:[self jsonArrayFromArray:bundle] options:NSJSONWritingPrettyPrinted error:&error];
     if(!error) {
-      NSURLRequest *request = [self requestForData:json];
+      NSString *urlString = [[(MSAIEnvelope *)bundle[0] name] isEqualToString:@"Microsoft.ApplicationInsights.Crash"] ? MSAI_CRASH_DATA_URL : MSAI_EVENT_DATA_URL;
+      NSURLRequest *request = [self requestForData:json urlString:urlString];
       [self sendRequest:request];
     }
     else {
-      NSLog(@"Error creating JSON from bundle array, saving bundle back to disk");
-      [MSAIPersistence persistBundle:bundle ofType:MSAIPersistenceTypeRegular withCompletionBlock:nil];
+      MSAILog(@"Error creating JSON from bundle array, don't save back to disk");
       self.sending = NO;
     }
   }else{
@@ -92,26 +95,26 @@
                                     
                                     typeof(self) strongSelf = weakSelf;
                                     NSInteger statusCode = [operation.response statusCode];
-                                    self.currentBundle = nil;
-                                    self.sending = NO;
+
                                     if(statusCode >= 200 && statusCode < 400) {
-                                      
-                                      NSLog(@"Sent data with status code: %ld", (long) statusCode);
-                                      NSLog(@"Response data:\n%@", [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil]);
-                                      
+                                      MSAILog(@"Sent data with status code: %ld", (long) statusCode);
+                                      MSAILog(@"Response data:\n%@", [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil]);
+                                      strongSelf.currentBundle = nil;
+                                      strongSelf.sending = NO;
                                       [strongSelf sendSavedData];
-                                      
                                     } else {
-                                      NSLog(@"Sending failed");
-                                    
-                                      //[MSAIPersistence persistBundle:self.currentBundle];
-                                      //TODO trigger sending again -> later and somewhere else?!
+                                      MSAILog(@"Sending MSAIAppInsights data failed");
+                                      MSAILog(@"Response data:\n%@", [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil]);
+                                      [MSAIPersistence persistAfterErrorWithBundle:weakSelf.currentBundle];
+                                      strongSelf.currentBundle = nil;
+                                      strongSelf.sending = NO;
                                     }
                                   }];
   
   [self.appClient enqeueHTTPOperation:operation];
 }
 
+//TODO remove this because it is never used and it's not public?
 - (void)sendRequest:(NSURLRequest *)request withCompletionBlock:(MSAINetworkCompletionBlock)completion{
   MSAIHTTPOperation *operation = [_appClient
                                   operationWithURLRequest:request
@@ -129,9 +132,9 @@
   return array;
 }
 
-- (NSURLRequest *)requestForData:(NSData *)data {
+- (NSURLRequest *)requestForData:(NSData *)data urlString:(NSString *)urlString {
   NSMutableURLRequest *request = [self.appClient requestWithMethod:@"POST"
-                                                              path:self.endpointPath
+                                                              path:urlString
                                                         parameters:nil];
   
   [request setHTTPBody:data];
