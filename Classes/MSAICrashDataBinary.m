@@ -42,7 +42,7 @@
 #pragma mark - NSCoding
 
 - (id)initWithCoder:(NSCoder *)coder {
-  self = [super init];
+  self = [super initWithCoder:coder];
   if(self) {
     self.startAddress = [coder decodeObjectForKey:@"self.startAddress"];
     self.endAddress = [coder decodeObjectForKey:@"self.endAddress"];
@@ -56,6 +56,7 @@
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder {
+  [super encodeWithCoder:coder];
   [coder encodeObject:self.startAddress forKey:@"self.startAddress"];
   [coder encodeObject:self.endAddress forKey:@"self.endAddress"];
   [coder encodeObject:self.name forKey:@"self.name"];

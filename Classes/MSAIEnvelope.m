@@ -71,7 +71,7 @@
 #pragma mark - NSCoding
 
 - (id)initWithCoder:(NSCoder *)coder {
-  self = [super init];
+  self = [super initWithCoder:coder];
   if(self) {
     self.version = [coder decodeObjectForKey:@"self.version"];
     self.name = [coder decodeObjectForKey:@"self.name"];
@@ -93,6 +93,7 @@
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder {
+  [super encodeWithCoder:coder];
   [coder encodeObject:self.version forKey:@"self.version"];
   [coder encodeObject:self.name forKey:@"self.name"];
   [coder encodeObject:self.time forKey:@"self.time"];

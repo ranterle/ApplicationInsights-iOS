@@ -60,7 +60,7 @@
 #pragma mark - NSCoding
 
 - (id)initWithCoder:(NSCoder *)coder {
-  self = [super init];
+  self = [super initWithCoder:coder];
   if(self) {
     self.crashDataHeadersId = [coder decodeObjectForKey:@"self.crashDataHeadersId"];
     self.process = [coder decodeObjectForKey:@"self.process"];
@@ -80,6 +80,7 @@
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder {
+  [super encodeWithCoder:coder];
   [coder encodeObject:self.crashDataHeadersId forKey:@"self.crashDataHeadersId"];
   [coder encodeObject:self.process forKey:@"self.process"];
   [coder encodeObject:self.processId forKey:@"self.processId"];

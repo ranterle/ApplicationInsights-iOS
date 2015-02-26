@@ -47,7 +47,7 @@
 #pragma mark - NSCoding
 
 - (id)initWithCoder:(NSCoder *)coder {
-  self = [super init];
+  self = [super initWithCoder:coder];
   if(self) {
     self.exceptionDetailsId = [coder decodeObjectForKey:@"self.exceptionDetailsId"];
     self.outerId = [coder decodeObjectForKey:@"self.outerId"];
@@ -61,6 +61,7 @@
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder {
+  [super encodeWithCoder:coder];
   [coder encodeObject:self.exceptionDetailsId forKey:@"self.exceptionDetailsId"];
   [coder encodeObject:self.outerId forKey:@"self.outerId"];
   [coder encodeObject:self.typeName forKey:@"self.typeName"];

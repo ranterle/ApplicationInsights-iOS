@@ -1,14 +1,12 @@
 #import "MSAIPageViewData.h"
 /// Data contract class for type PageViewData.
 @implementation MSAIPageViewData
-@synthesize envelopeTypeName = _envelopeTypeName;
-@synthesize dataTypeName = _dataTypeName;
 
 /// Initializes a new instance of the class.
 - (instancetype)init {
   if(self = [super init]) {
-    _envelopeTypeName = @"Microsoft.ApplicationInsights.PageView";
-    _dataTypeName = @"PageViewData";
+    self.envelopeTypeName = @"Microsoft.ApplicationInsights.PageView";
+    self.dataTypeName = @"PageViewData";
   }
   return self;
 }
@@ -33,8 +31,8 @@
 - (id)initWithCoder:(NSCoder *)coder {
   self = [super initWithCoder:coder];
   if(self) {
-    _envelopeTypeName =[coder decodeObjectForKey:@"_envelopeTypeName"];
-    _dataTypeName = [coder decodeObjectForKey:@"_dataTypeName"];
+    self.envelopeTypeName =[coder decodeObjectForKey:@"envelopeTypeName"];
+    self.dataTypeName = [coder decodeObjectForKey:@"dataTypeName"];
     self.url = [coder decodeObjectForKey:@"self.url"];
     self.duration = [coder decodeObjectForKey:@"self.duration"];
   }
@@ -43,8 +41,8 @@
 
 - (void)encodeWithCoder:(NSCoder *)coder {
   [super encodeWithCoder:coder];
-  [coder encodeObject:_envelopeTypeName forKey:@"_envelopeTypeName"];
-  [coder encodeObject:_dataTypeName forKey:@"_dataTypeName"];
+  [coder encodeObject:self.envelopeTypeName forKey:@"envelopeTypeName"];
+  [coder encodeObject:self.dataTypeName forKey:@"dataTypeName"];
   [coder encodeObject:self.url forKey:@"self.url"];
   [coder encodeObject:self.duration forKey:@"self.duration"];
 }

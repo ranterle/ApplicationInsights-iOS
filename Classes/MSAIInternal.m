@@ -27,7 +27,7 @@
 #pragma mark - NSCoding
 
 - (id)initWithCoder:(NSCoder *)coder {
-  self = [super init];
+  self = [super initWithCoder:coder];
   if(self) {
     self.sdkVersion = [coder decodeObjectForKey:@"self.sdkVersion"];
     self.agentVersion = [coder decodeObjectForKey:@"self.agentVersion"];
@@ -36,6 +36,7 @@
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder {
+  [super encodeWithCoder:coder];
   [coder encodeObject:self.sdkVersion forKey:@"self.sdkVersion"];
   [coder encodeObject:self.agentVersion forKey:@"self.agentVersion"];
 }

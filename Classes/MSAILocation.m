@@ -24,7 +24,7 @@
 #pragma mark - NSCoding
 
 - (id)initWithCoder:(NSCoder *)coder {
-  self = [super init];
+  self = [super initWithCoder:coder];
   if(self) {
     self.ip = [coder decodeObjectForKey:@"self.ip"];
   }
@@ -32,6 +32,7 @@
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder {
+  [super encodeWithCoder:coder];
   [coder encodeObject:self.ip forKey:@"self.ip"];
 }
 

@@ -33,7 +33,7 @@
 #pragma mark - NSCoding
 
 - (id)initWithCoder:(NSCoder *)coder {
-  self = [super init];
+  self = [super initWithCoder:coder];
   if(self) {
     self.accountAcquisitionDate = [coder decodeObjectForKey:@"self.accountAcquisitionDate"];
     self.accountId = [coder decodeObjectForKey:@"self.accountId"];
@@ -44,6 +44,7 @@
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder {
+  [super encodeWithCoder:coder];
   [coder encodeObject:self.accountAcquisitionDate forKey:@"self.accountAcquisitionDate"];
   [coder encodeObject:self.accountId forKey:@"self.accountId"];
   [coder encodeObject:self.userAgent forKey:@"self.userAgent"];

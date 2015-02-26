@@ -32,7 +32,7 @@
 #pragma mark - NSCoding
 
 - (id)initWithCoder:(NSCoder *)coder {
-  self = [super init];
+  self = [super initWithCoder:coder];
   if(self) {
     self.crashDataThreadId = [coder decodeObjectForKey:@"self.crashDataThreadId"];
     self.frames = [coder decodeObjectForKey:@"self.frames"];
@@ -41,6 +41,7 @@
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder {
+  [super encodeWithCoder:coder];
   [coder encodeObject:self.crashDataThreadId forKey:@"self.crashDataThreadId"];
   [coder encodeObject:self.frames forKey:@"self.frames"];
 }

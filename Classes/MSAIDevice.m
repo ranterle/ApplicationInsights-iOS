@@ -63,7 +63,7 @@
 #pragma mark - NSCoding
 
 - (id)initWithCoder:(NSCoder *)coder {
-  self = [super init];
+  self = [super initWithCoder:coder];
   if(self) {
     self.deviceId = [coder decodeObjectForKey:@"self.deviceId"];
     self.ip = [coder decodeObjectForKey:@"self.ip"];
@@ -84,6 +84,7 @@
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder {
+  [super encodeWithCoder:coder];
   [coder encodeObject:self.deviceId forKey:@"self.deviceId"];
   [coder encodeObject:self.ip forKey:@"self.ip"];
   [coder encodeObject:self.language forKey:@"self.language"];

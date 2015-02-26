@@ -1,14 +1,12 @@
 #import "MSAICrashData.h"
 /// Data contract class for type CrashData.
 @implementation MSAICrashData
-@synthesize envelopeTypeName = _envelopeTypeName;
-@synthesize dataTypeName = _dataTypeName;
 
 /// Initializes a new instance of the class.
 - (instancetype)init {
   if(self = [super init]) {
-    _envelopeTypeName = @"Microsoft.ApplicationInsights.Crash";
-    _dataTypeName = @"CrashData";
+    self.envelopeTypeName = @"Microsoft.ApplicationInsights.Crash";
+    self.dataTypeName = @"CrashData";
     self.version = @2;
     self.threads = [NSMutableArray new];
     self.binaries = [NSMutableArray new];
@@ -49,8 +47,8 @@
 - (id)initWithCoder:(NSCoder *)coder {
   self = [super initWithCoder:coder];
   if(self) {
-    _envelopeTypeName =[coder decodeObjectForKey:@"_envelopeTypeName"];
-    _dataTypeName = [coder decodeObjectForKey:@"_dataTypeName"];
+    self.envelopeTypeName =[coder decodeObjectForKey:@"envelopeTypeName"];
+    self.dataTypeName = [coder decodeObjectForKey:@"dataTypeName"];
     self.version = [coder decodeObjectForKey:@"self.version"];
     self.headers = [coder decodeObjectForKey:@"self.headers"];
     self.threads = [coder decodeObjectForKey:@"self.threads"];
@@ -61,8 +59,8 @@
 
 - (void)encodeWithCoder:(NSCoder *)coder {
   [super encodeWithCoder:coder];
-  [coder encodeObject:_envelopeTypeName forKey:@"_envelopeTypeName"];
-  [coder encodeObject:_dataTypeName forKey:@"_dataTypeName"];
+  [coder encodeObject:self.envelopeTypeName forKey:@"envelopeTypeName"];
+  [coder encodeObject:self.dataTypeName forKey:@"dataTypeName"];
   [coder encodeObject:self.version forKey:@"self.version"];
   [coder encodeObject:self.headers forKey:@"self.headers"];
   [coder encodeObject:self.threads forKey:@"self.threads"];

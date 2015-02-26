@@ -1,14 +1,12 @@
 #import "MSAIPageViewPerfData.h"
 /// Data contract class for type PageViewPerfData.
 @implementation MSAIPageViewPerfData
-@synthesize envelopeTypeName = _envelopeTypeName;
-@synthesize dataTypeName = _dataTypeName;
 
 /// Initializes a new instance of the class.
 - (instancetype)init {
   if(self = [super init]) {
-    _envelopeTypeName = @"Microsoft.ApplicationInsights.PageViewPerf";
-    _dataTypeName = @"PageViewPerfData";
+    self.envelopeTypeName = @"Microsoft.ApplicationInsights.PageViewPerf";
+    self.dataTypeName = @"PageViewPerfData";
   }
   return self;
 }
@@ -42,8 +40,8 @@
 - (id)initWithCoder:(NSCoder *)coder {
   self = [super initWithCoder:coder];
   if(self) {
-    _envelopeTypeName =[coder decodeObjectForKey:@"_envelopeTypeName"];
-    _dataTypeName = [coder decodeObjectForKey:@"_dataTypeName"];
+    self.envelopeTypeName =[coder decodeObjectForKey:@"envelopeTypeName"];
+    self.dataTypeName = [coder decodeObjectForKey:@"dataTypeName"];
     self.perfTotal = [coder decodeObjectForKey:@"self.perfTotal"];
     self.networkConnect = [coder decodeObjectForKey:@"self.networkConnect"];
     self.sentRequest = [coder decodeObjectForKey:@"self.sentRequest"];
@@ -55,8 +53,8 @@
 
 - (void)encodeWithCoder:(NSCoder *)coder {
   [super encodeWithCoder:coder];
-  [coder encodeObject:_envelopeTypeName forKey:@"_envelopeTypeName"];
-  [coder encodeObject:_dataTypeName forKey:@"_dataTypeName"];
+  [coder encodeObject:self.envelopeTypeName forKey:@"envelopeTypeName"];
+  [coder encodeObject:self.dataTypeName forKey:@"dataTypeName"];
   [coder encodeObject:self.perfTotal forKey:@"self.perfTotal"];
   [coder encodeObject:self.networkConnect forKey:@"self.networkConnect"];
   [coder encodeObject:self.sentRequest forKey:@"self.sentRequest"];

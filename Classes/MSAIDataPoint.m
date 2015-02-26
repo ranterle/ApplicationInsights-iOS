@@ -41,7 +41,7 @@
 #pragma mark - NSCoding
 
 - (id)initWithCoder:(NSCoder *)coder {
-  self = [super init];
+  self = [super initWithCoder:coder];
   if(self) {
     self.name = [coder decodeObjectForKey:@"self.name"];
     self.kind = (MSAIDataPointType)[coder decodeIntForKey:@"self.kind"];
@@ -55,6 +55,7 @@
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder {
+  [super encodeWithCoder:coder];
   [coder encodeObject:self.name forKey:@"self.name"];
   [coder encodeInt:self.kind forKey:@"self.kind"];
   [coder encodeObject:self.value forKey:@"self.value"];

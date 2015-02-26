@@ -30,7 +30,7 @@
 #pragma mark - NSCoding
 
 - (id)initWithCoder:(NSCoder *)coder {
-  self = [super init];
+  self = [super initWithCoder:coder];
   if(self) {
     self.sessionId = [coder decodeObjectForKey:@"self.sessionId"];
     self.isFirst = [coder decodeObjectForKey:@"self.isFirst"];
@@ -40,6 +40,7 @@
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder {
+  [super encodeWithCoder:coder];
   [coder encodeObject:self.sessionId forKey:@"self.sessionId"];
   [coder encodeObject:self.isFirst forKey:@"self.isFirst"];
   [coder encodeObject:self.isNew forKey:@"self.isNew"];

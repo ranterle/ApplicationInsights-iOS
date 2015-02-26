@@ -7,8 +7,8 @@
 /// Initializes a new instance of the class.
 - (instancetype)init {
   if(self = [super init]) {
-    _envelopeTypeName = @"Microsoft.ApplicationInsights.Do";
-    _dataTypeName = @"Domain";
+    self.envelopeTypeName = @"Microsoft.ApplicationInsights.Do";
+    self.dataTypeName = @"Domain";
   }
   return self;
 }
@@ -27,16 +27,16 @@
 - (id)initWithCoder:(NSCoder *)coder {
   self = [super initWithCoder:coder];
   if(self) {
-    _envelopeTypeName =[coder decodeObjectForKey:@"_envelopeTypeName"];
-    _dataTypeName = [coder decodeObjectForKey:@"_dataTypeName"];
+    self.envelopeTypeName =[coder decodeObjectForKey:@"envelopeTypeName"];
+    self.dataTypeName = [coder decodeObjectForKey:@"dataTypeName"];
   }
   return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder {
   [super encodeWithCoder:coder];
-  [coder encodeObject:_envelopeTypeName forKey:@"_envelopeTypeName"];
-  [coder encodeObject:_dataTypeName forKey:@"_dataTypeName"];
+  [coder encodeObject:self.envelopeTypeName forKey:@"envelopeTypeName"];
+  [coder encodeObject:self.dataTypeName forKey:@"dataTypeName"];
 }
 
 @end

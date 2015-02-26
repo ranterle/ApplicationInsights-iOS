@@ -31,7 +31,7 @@
 #pragma mark - NSCoding
 
 - (id)initWithCoder:(NSCoder *)coder {
-  self = [super init];
+  self = [super initWithCoder:coder];
   if(self) {
     self.address = [coder decodeObjectForKey:@"self.address"];
     self.symbol = [coder decodeObjectForKey:@"self.symbol"];
@@ -41,6 +41,7 @@
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder {
+  [super encodeWithCoder:coder];
   [coder encodeObject:self.address forKey:@"self.address"];
   [coder encodeObject:self.symbol forKey:@"self.symbol"];
   [coder encodeObject:self.registers forKey:@"self.registers"];

@@ -1,14 +1,12 @@
 #import "MSAIRemoteDependencyData.h"
 /// Data contract class for type RemoteDependencyData.
 @implementation MSAIRemoteDependencyData
-@synthesize envelopeTypeName = _envelopeTypeName;
-@synthesize dataTypeName = _dataTypeName;
 
 /// Initializes a new instance of the class.
 - (instancetype)init {
   if(self = [super init]) {
-    _envelopeTypeName = @"Microsoft.ApplicationInsights.RemoteDependency";
-    _dataTypeName = @"RemoteDependencyData";
+    self.envelopeTypeName = @"Microsoft.ApplicationInsights.RemoteDependency";
+    self.dataTypeName = @"RemoteDependencyData";
     self.version = @2;
     self.kind = MSAIDataPointType_measurement;
     self.dependencyKind = MSAIDependencyKind_other;
@@ -61,8 +59,8 @@
 - (id)initWithCoder:(NSCoder *)coder {
   self = [super initWithCoder:coder];
   if(self) {
-    _envelopeTypeName =[coder decodeObjectForKey:@"_envelopeTypeName"];
-    _dataTypeName = [coder decodeObjectForKey:@"_dataTypeName"];
+    self.envelopeTypeName =[coder decodeObjectForKey:@"envelopeTypeName"];
+    self.dataTypeName = [coder decodeObjectForKey:@"dataTypeName"];
     self.version = [coder decodeObjectForKey:@"self.version"];
     self.name = [coder decodeObjectForKey:@"self.name"];
     self.kind = (MSAIDataPointType)[coder decodeIntForKey:@"self.kind"];
@@ -82,8 +80,8 @@
 
 - (void)encodeWithCoder:(NSCoder *)coder {
   [super encodeWithCoder:coder];
-  [coder encodeObject:_envelopeTypeName forKey:@"_envelopeTypeName"];
-  [coder encodeObject:_dataTypeName forKey:@"_dataTypeName"];
+  [coder encodeObject:self.envelopeTypeName forKey:@"envelopeTypeName"];
+  [coder encodeObject:self.dataTypeName forKey:@"dataTypeName"];
   [coder encodeObject:self.version forKey:@"self.version"];
   [coder encodeObject:self.name forKey:@"self.name"];
   [coder encodeInt:self.kind forKey:@"self.kind"];
