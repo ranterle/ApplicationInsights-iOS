@@ -10,7 +10,7 @@
 @property (nonatomic, copy, readonly)NSString *envelopeTypeName;
 @property (nonatomic, copy, readonly)NSString *dataTypeName;
 @property (nonatomic, strong) MSAICrashDataHeaders *headers;
-@property (nonatomic, copy) NSMutableArray *threads;
-@property (nonatomic, copy) NSMutableArray *binaries;
+@property (nonatomic, strong) NSMutableArray *threads;
+@property (nonatomic, strong) NSMutableArray *binaries;
 
 @end

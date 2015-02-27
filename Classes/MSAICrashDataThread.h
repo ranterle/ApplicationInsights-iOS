@@ -6,6 +6,6 @@
 @interface MSAICrashDataThread : MSAIObject <NSCoding>
 
 @property (nonatomic, copy) NSNumber *crashDataThreadId;
-@property (nonatomic, copy) NSMutableArray *frames;
+@property (nonatomic, strong) NSMutableArray *frames;
 
 @end

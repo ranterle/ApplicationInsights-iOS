@@ -11,6 +11,6 @@
 @property (nonatomic, copy) NSString *message;
 @property (nonatomic, assign) BOOL hasFullStack;
 @property (nonatomic, copy) NSString *stack;
-@property (nonatomic, copy) NSMutableArray *parsedStack;
+@property (nonatomic, strong) NSMutableArray *parsedStack;
 
 @end

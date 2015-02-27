@@ -7,6 +7,6 @@
 
 @property (nonatomic, copy, readonly)NSString *envelopeTypeName;
 @property (nonatomic, copy, readonly)NSString *dataTypeName;
-@property (nonatomic, copy) NSMutableArray *metrics;
+@property (nonatomic, strong) NSMutableArray *metrics;
 
 @end

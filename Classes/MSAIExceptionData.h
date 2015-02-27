@@ -9,7 +9,7 @@
 @property (nonatomic, copy, readonly) NSString *envelopeTypeName;
 @property (nonatomic, copy, readonly) NSString *dataTypeName;
 @property (nonatomic, copy) NSString *handledAt;
-@property (nonatomic, copy) NSMutableArray *exceptions;
+@property (nonatomic, strong) NSMutableArray *exceptions;
 @property (nonatomic, assign) MSAISeverityLevel severityLevel;
 @property (nonatomic, copy) NSString *problemId;
 @property (nonatomic, copy) NSNumber *crashThreadId;
