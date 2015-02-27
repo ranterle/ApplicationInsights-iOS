@@ -9,8 +9,4 @@
 @property (nonatomic, copy) NSString *userAgent;
 @property (nonatomic, copy) NSString *userId;
 
-- (id)initWithCoder:(NSCoder *)coder;
-
-- (void)encodeWithCoder:(NSCoder *)coder;
-
 @end

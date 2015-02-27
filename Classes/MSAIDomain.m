@@ -26,17 +26,13 @@
 
 - (id)initWithCoder:(NSCoder *)coder {
   self = [super initWithCoder:coder];
-  if(self) {
-    self.envelopeTypeName =[coder decodeObjectForKey:@"envelopeTypeName"];
-    self.dataTypeName = [coder decodeObjectForKey:@"dataTypeName"];
-  }
+  
   return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder {
   [super encodeWithCoder:coder];
-  [coder encodeObject:self.envelopeTypeName forKey:@"envelopeTypeName"];
-  [coder encodeObject:self.dataTypeName forKey:@"dataTypeName"];
+
 }
 
 @end

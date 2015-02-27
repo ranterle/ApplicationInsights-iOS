@@ -18,8 +18,4 @@
 @property (nonatomic, copy) NSString *exceptionAddress;
 @property (nonatomic, copy) NSString *exceptionReason;
 
-- (id)initWithCoder:(NSCoder *)coder;
-
-- (void)encodeWithCoder:(NSCoder *)coder;
-
 @end

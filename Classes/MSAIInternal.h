@@ -7,8 +7,4 @@
 @property (nonatomic, copy) NSString *sdkVersion;
 @property (nonatomic, copy) NSString *agentVersion;
 
-- (id)initWithCoder:(NSCoder *)coder;
-
-- (void)encodeWithCoder:(NSCoder *)coder;
-
 @end

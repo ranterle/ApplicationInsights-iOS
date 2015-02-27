@@ -8,8 +8,4 @@
 @property (nonatomic, copy) NSString *symbol;
 @property (nonatomic, strong) NSDictionary *registers;
 
-- (id)initWithCoder:(NSCoder *)coder;
-
-- (void)encodeWithCoder:(NSCoder *)coder;
-
 @end

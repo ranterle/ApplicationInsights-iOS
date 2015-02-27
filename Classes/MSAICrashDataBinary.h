@@ -12,8 +12,4 @@
 @property (nonatomic, copy) NSString *uuid;
 @property (nonatomic, copy) NSString *path;
 
-- (id)initWithCoder:(NSCoder *)coder;
-
-- (void)encodeWithCoder:(NSCoder *)coder;
-
 @end

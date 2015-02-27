@@ -59,16 +59,13 @@
   if(self) {
     self.envelopeTypeName =[coder decodeObjectForKey:@"envelopeTypeName"];
     self.dataTypeName = [coder decodeObjectForKey:@"dataTypeName"];
-    self.version = [coder decodeObjectForKey:@"self.version"];
     self.requestDataId = [coder decodeObjectForKey:@"self.requestDataId"];
-    self.name = [coder decodeObjectForKey:@"self.name"];
     self.startTime = [coder decodeObjectForKey:@"self.startTime"];
     self.duration = [coder decodeObjectForKey:@"self.duration"];
     self.responseCode = [coder decodeObjectForKey:@"self.responseCode"];
     self.success = [coder decodeBoolForKey:@"self.success"];
     self.httpMethod = [coder decodeObjectForKey:@"self.httpMethod"];
     self.url = [coder decodeObjectForKey:@"self.url"];
-    self.properties = [coder decodeObjectForKey:@"self.properties"];
     self.measurements = [coder decodeObjectForKey:@"self.measurements"];
   }
   return self;
@@ -78,16 +75,13 @@
   [super encodeWithCoder:coder];
   [coder encodeObject:self.envelopeTypeName forKey:@"envelopeTypeName"];
   [coder encodeObject:self.dataTypeName forKey:@"dataTypeName"];
-  [coder encodeObject:self.version forKey:@"self.version"];
   [coder encodeObject:self.requestDataId forKey:@"self.requestDataId"];
-  [coder encodeObject:self.name forKey:@"self.name"];
   [coder encodeObject:self.startTime forKey:@"self.startTime"];
   [coder encodeObject:self.duration forKey:@"self.duration"];
   [coder encodeObject:self.responseCode forKey:@"self.responseCode"];
   [coder encodeBool:self.success forKey:@"self.success"];
   [coder encodeObject:self.httpMethod forKey:@"self.httpMethod"];
   [coder encodeObject:self.url forKey:@"self.url"];
-  [coder encodeObject:self.properties forKey:@"self.properties"];
   [coder encodeObject:self.measurements forKey:@"self.measurements"];
 }
 

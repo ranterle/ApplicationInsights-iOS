@@ -13,8 +13,4 @@
 @property (nonatomic, copy) NSString *stack;
 @property (nonatomic, copy) NSMutableArray *parsedStack;
 
-- (id)initWithCoder:(NSCoder *)coder;
-
-- (void)encodeWithCoder:(NSCoder *)coder;
-
 @end

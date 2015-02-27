@@ -30,7 +30,6 @@
   if(self) {
     self.envelopeTypeName =[coder decodeObjectForKey:@"envelopeTypeName"];
     self.dataTypeName = [coder decodeObjectForKey:@"dataTypeName"];
-    self.version = [coder decodeObjectForKey:@"self.version"];
     self.state = (MSAISessionState)[coder decodeIntForKey:@"self.state"];
   }
   return self;
@@ -40,7 +39,6 @@
   [super encodeWithCoder:coder];
   [coder encodeObject:self.envelopeTypeName forKey:@"envelopeTypeName"];
   [coder encodeObject:self.dataTypeName forKey:@"dataTypeName"];
-  [coder encodeObject:self.version forKey:@"self.version"];
   [coder encodeInt:self.state forKey:@"self.state"];
 }
 

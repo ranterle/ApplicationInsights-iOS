@@ -49,7 +49,6 @@
   if(self) {
     self.envelopeTypeName =[coder decodeObjectForKey:@"envelopeTypeName"];
     self.dataTypeName = [coder decodeObjectForKey:@"dataTypeName"];
-    self.version = [coder decodeObjectForKey:@"self.version"];
     self.headers = [coder decodeObjectForKey:@"self.headers"];
     self.threads = [coder decodeObjectForKey:@"self.threads"];
     self.binaries = [coder decodeObjectForKey:@"self.binaries"];
@@ -61,7 +60,6 @@
   [super encodeWithCoder:coder];
   [coder encodeObject:self.envelopeTypeName forKey:@"envelopeTypeName"];
   [coder encodeObject:self.dataTypeName forKey:@"dataTypeName"];
-  [coder encodeObject:self.version forKey:@"self.version"];
   [coder encodeObject:self.headers forKey:@"self.headers"];
   [coder encodeObject:self.threads forKey:@"self.threads"];
   [coder encodeObject:self.binaries forKey:@"self.binaries"];

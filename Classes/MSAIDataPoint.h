@@ -13,8 +13,4 @@
 @property (nonatomic, copy) NSNumber *max;
 @property (nonatomic, copy) NSNumber *stdDev;
 
-- (id)initWithCoder:(NSCoder *)coder;
-
-- (void)encodeWithCoder:(NSCoder *)coder;
-
 @end

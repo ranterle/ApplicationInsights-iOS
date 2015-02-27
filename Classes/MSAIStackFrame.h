@@ -10,8 +10,4 @@
 @property (nonatomic, copy) NSString *fileName;
 @property (nonatomic, copy) NSNumber *line;
 
-- (id)initWithCoder:(NSCoder *)coder;
-
-- (void)encodeWithCoder:(NSCoder *)coder;
-
 @end

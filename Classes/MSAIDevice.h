@@ -19,8 +19,4 @@
 @property (nonatomic, copy) NSString *type;
 @property (nonatomic, copy) NSString *machineName;
 
-- (id)initWithCoder:(NSCoder *)coder;
-
-- (void)encodeWithCoder:(NSCoder *)coder;
-
 @end

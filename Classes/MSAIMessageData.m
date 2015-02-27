@@ -36,10 +36,8 @@
   if(self) {
     self.envelopeTypeName =[coder decodeObjectForKey:@"envelopeTypeName"];
     self.dataTypeName = [coder decodeObjectForKey:@"dataTypeName"];
-    self.version = [coder decodeObjectForKey:@"self.version"];
     self.message = [coder decodeObjectForKey:@"self.message"];
     self.severityLevel = (MSAISeverityLevel)[coder decodeIntForKey:@"self.severityLevel"];
-    self.properties = [coder decodeObjectForKey:@"self.properties"];
   }
   return self;
 }
@@ -48,10 +46,8 @@
   [super encodeWithCoder:coder];
   [coder encodeObject:self.envelopeTypeName forKey:@"envelopeTypeName"];
   [coder encodeObject:self.dataTypeName forKey:@"dataTypeName"];
-  [coder encodeObject:self.version forKey:@"self.version"];
   [coder encodeObject:self.message forKey:@"self.message"];
   [coder encodeInt:self.severityLevel forKey:@"self.severityLevel"];
-  [coder encodeObject:self.properties forKey:@"self.properties"];
 }
 
 @end

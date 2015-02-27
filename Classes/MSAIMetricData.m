@@ -40,9 +40,7 @@
   if(self) {
     self.envelopeTypeName =[coder decodeObjectForKey:@"envelopeTypeName"];
     self.dataTypeName = [coder decodeObjectForKey:@"dataTypeName"];
-    self.version = [coder decodeObjectForKey:@"self.version"];
     self.metrics = [coder decodeObjectForKey:@"self.metrics"];
-    self.properties = [coder decodeObjectForKey:@"self.properties"];
   }
   return self;
 }
@@ -51,9 +49,7 @@
   [super encodeWithCoder:coder];
   [coder encodeObject:self.envelopeTypeName forKey:@"envelopeTypeName"];
   [coder encodeObject:self.dataTypeName forKey:@"dataTypeName"];
-  [coder encodeObject:self.version forKey:@"self.version"];
   [coder encodeObject:self.metrics forKey:@"self.metrics"];
-  [coder encodeObject:self.properties forKey:@"self.properties"];
 }
 
 @end

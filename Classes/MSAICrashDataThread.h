@@ -8,8 +8,4 @@
 @property (nonatomic, copy) NSNumber *crashDataThreadId;
 @property (nonatomic, copy) NSMutableArray *frames;
 
-- (id)initWithCoder:(NSCoder *)coder;
-
-- (void)encodeWithCoder:(NSCoder *)coder;
-
 @end
