@@ -26,13 +26,11 @@
 
 - (id)initWithCoder:(NSCoder *)coder {
   self = [super initWithCoder:coder];
-  
   return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder {
   [super encodeWithCoder:coder];
-
 }
 
 @end

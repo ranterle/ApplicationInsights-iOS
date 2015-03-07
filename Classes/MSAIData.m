@@ -16,8 +16,9 @@
 - (MSAIOrderedDictionary *)serializeToDictionary {
   MSAIOrderedDictionary *dict = [super serializeToDictionary];
   if(self.baseData != nil) {
-    if([NSJSONSerialization isValidJSONObject:[self.baseData serializeToDictionary]]) {
-      [dict setObject:[self.baseData serializeToDictionary] forKey:@"baseData"];
+    MSAIOrderedDictionary *baseDataDict = [self.baseData serializeToDictionary];
+    if ([NSJSONSerialization isValidJSONObject:baseDataDict]) {
+      [dict setObject:baseDataDict forKey:@"baseData"];
     }
   }
   return dict;

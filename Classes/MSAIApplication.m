@@ -26,14 +26,12 @@
 - (id)initWithCoder:(NSCoder *)coder {
   self = [super initWithCoder:coder];
   if(self) {
-    self.version = [coder decodeObjectForKey:@"self.version"];
   }
   return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder {
   [super encodeWithCoder:coder];
-  [coder encodeObject:self.version forKey:@"self.version"];
 }
 
 @end

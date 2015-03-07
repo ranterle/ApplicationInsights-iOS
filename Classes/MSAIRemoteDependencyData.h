@@ -7,8 +7,8 @@
 
 @interface MSAIRemoteDependencyData : MSAIDomain <NSCoding>
 
-@property (nonatomic, copy, readonly)NSString *envelopeTypeName;
-@property (nonatomic, copy, readonly)NSString *dataTypeName;
+@property (nonatomic, copy, readonly) NSString *envelopeTypeName;
+@property (nonatomic, copy, readonly) NSString *dataTypeName;
 @property (nonatomic, assign) MSAIDataPointType kind;
 @property (nonatomic, copy) NSNumber *value;
 @property (nonatomic, copy) NSNumber *count;

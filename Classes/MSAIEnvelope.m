@@ -61,8 +61,9 @@
     [dict setObject:self.tags forKey:@"tags"];
   }
   if(self.data != nil) {
-    if([NSJSONSerialization isValidJSONObject:[self.data serializeToDictionary]]) {
-      [dict setObject:[self.data serializeToDictionary] forKey:@"data"];
+    MSAIOrderedDictionary *dataDict = [self.data serializeToDictionary];
+    if ([NSJSONSerialization isValidJSONObject:dataDict]) {
+      [dict setObject:dataDict forKey:@"data"];
     }
   }
   return dict;
@@ -73,8 +74,6 @@
 - (id)initWithCoder:(NSCoder *)coder {
   self = [super initWithCoder:coder];
   if(self) {
-    self.version = [coder decodeObjectForKey:@"self.version"];
-    self.name = [coder decodeObjectForKey:@"self.name"];
     self.time = [coder decodeObjectForKey:@"self.time"];
     self.sampleRate = [coder decodeObjectForKey:@"self.sampleRate"];
     self.seq = [coder decodeObjectForKey:@"self.seq"];
@@ -94,8 +93,6 @@
 
 - (void)encodeWithCoder:(NSCoder *)coder {
   [super encodeWithCoder:coder];
-  [coder encodeObject:self.version forKey:@"self.version"];
-  [coder encodeObject:self.name forKey:@"self.name"];
   [coder encodeObject:self.time forKey:@"self.time"];
   [coder encodeObject:self.sampleRate forKey:@"self.sampleRate"];
   [coder encodeObject:self.seq forKey:@"self.seq"];

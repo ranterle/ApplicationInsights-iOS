@@ -4,8 +4,8 @@
 
 @interface MSAIRequestData : MSAIDomain <NSCoding>
 
-@property (nonatomic, copy, readonly)NSString *envelopeTypeName;
-@property (nonatomic, copy, readonly)NSString *dataTypeName;
+@property (nonatomic, copy, readonly) NSString *envelopeTypeName;
+@property (nonatomic, copy, readonly) NSString *dataTypeName;
 @property (nonatomic, copy) NSString *requestDataId;
 @property (nonatomic, copy) NSString *startTime;
 @property (nonatomic, copy) NSString *duration;

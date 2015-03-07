@@ -54,13 +54,11 @@
   if(self) {
     self.envelopeTypeName =[coder decodeObjectForKey:@"envelopeTypeName"];
     self.dataTypeName = [coder decodeObjectForKey:@"dataTypeName"];
-    self.version = [coder decodeObjectForKey:@"self.version"];
     self.handledAt = [coder decodeObjectForKey:@"self.handledAt"];
     self.exceptions = [coder decodeObjectForKey:@"self.exceptions"];
     self.severityLevel = (MSAISeverityLevel)[coder decodeIntForKey:@"self.severityLevel"];
     self.problemId = [coder decodeObjectForKey:@"self.problemId"];
     self.crashThreadId = [coder decodeObjectForKey:@"self.crashThreadId"];
-    self.properties = [coder decodeObjectForKey:@"self.properties"];
     self.measurements = [coder decodeObjectForKey:@"self.measurements"];
   }
   return self;
@@ -70,13 +68,11 @@
   [super encodeWithCoder:coder];
   [coder encodeObject:self.envelopeTypeName forKey:@"envelopeTypeName"];
   [coder encodeObject:self.dataTypeName forKey:@"dataTypeName"];
-  [coder encodeObject:self.version forKey:@"self.version"];
   [coder encodeObject:self.handledAt forKey:@"self.handledAt"];
   [coder encodeObject:self.exceptions forKey:@"self.exceptions"];
   [coder encodeInt:self.severityLevel forKey:@"self.severityLevel"];
   [coder encodeObject:self.problemId forKey:@"self.problemId"];
   [coder encodeObject:self.crashThreadId forKey:@"self.crashThreadId"];
-  [coder encodeObject:self.properties forKey:@"self.properties"];
   [coder encodeObject:self.measurements forKey:@"self.measurements"];
 }
 

@@ -21,8 +21,9 @@
 - (MSAIOrderedDictionary *)serializeToDictionary {
   MSAIOrderedDictionary *dict = [super serializeToDictionary];
   if(self.headers != nil) {
-    if([NSJSONSerialization isValidJSONObject:[self.headers serializeToDictionary]]) {
-      [dict setObject:[self.headers serializeToDictionary] forKey:@"headers"];
+    MSAIOrderedDictionary *headersDict = [self.headers serializeToDictionary];
+    if ([NSJSONSerialization isValidJSONObject:headersDict]) {
+      [dict setObject:headersDict forKey:@"headers"];
     }
   }
   if(self.threads != nil) {

@@ -43,7 +43,6 @@
 - (id)initWithCoder:(NSCoder *)coder {
   self = [super initWithCoder:coder];
   if(self) {
-    self.name = [coder decodeObjectForKey:@"self.name"];
     self.kind = (MSAIDataPointType)[coder decodeIntForKey:@"self.kind"];
     self.value = [coder decodeObjectForKey:@"self.value"];
     self.count = [coder decodeObjectForKey:@"self.count"];
@@ -56,7 +55,6 @@
 
 - (void)encodeWithCoder:(NSCoder *)coder {
   [super encodeWithCoder:coder];
-  [coder encodeObject:self.name forKey:@"self.name"];
   [coder encodeInt:self.kind forKey:@"self.kind"];
   [coder encodeObject:self.value forKey:@"self.value"];
   [coder encodeObject:self.count forKey:@"self.count"];

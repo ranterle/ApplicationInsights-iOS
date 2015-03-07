@@ -36,7 +36,6 @@
   self = [super initWithCoder:coder];
   if(self) {
     self.operationId = [coder decodeObjectForKey:@"self.operationId"];
-    self.name = [coder decodeObjectForKey:@"self.name"];
     self.parentId = [coder decodeObjectForKey:@"self.parentId"];
     self.rootId = [coder decodeObjectForKey:@"self.rootId"];
   }
@@ -46,7 +45,6 @@
 - (void)encodeWithCoder:(NSCoder *)coder {
   [super encodeWithCoder:coder];
   [coder encodeObject:self.operationId forKey:@"self.operationId"];
-  [coder encodeObject:self.name forKey:@"self.name"];
   [coder encodeObject:self.parentId forKey:@"self.parentId"];
   [coder encodeObject:self.rootId forKey:@"self.rootId"];
 }
