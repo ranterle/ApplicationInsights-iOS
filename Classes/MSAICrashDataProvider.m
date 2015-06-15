@@ -36,8 +36,6 @@
 #import <mach-o/dyld.h>
 #import <mach-o/getsect.h>
 #import <mach-o/ldsyms.h>
-#import <dlfcn.h>
-#import <Availability.h>
 
 #if defined(__OBJC2__)
 #define SEL_NAME_SECT "__objc_methname"
@@ -47,16 +45,12 @@
 
 #import "MSAICrashDataProvider.h"
 #import "MSAICrashData.h"
-#import "MSAICrashDataHeaders.h"
-#import "MSAICrashDataBinary.h"
-#import "MSAICrashDataThreadFrame.h"
 #import "MSAIHelper.h"
 #import "MSAIContextHelper.h"
 #import "MSAIContextHelperPrivate.h"
 #import "MSAIEnvelope.h"
 #import "MSAIData.h"
 #import "MSAIEnvelopeManagerPrivate.h"
-#import "MSAIEnvelopeManager.h"
 
 /*
  * XXX: The ARM64 CPU type, and ARM_V7S and ARM_V8 Mach-O CPU subtypes are not
